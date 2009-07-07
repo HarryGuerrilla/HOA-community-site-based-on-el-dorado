@@ -134,7 +134,7 @@ class UsersControllerTest < ActionController::TestCase
     private_site
     num_users = User.count
     post :create, :user => {:login => 'skdj', :email => 'test@test.com', :password => 'dfj', :password_confirmation => 'dfj'}
-    assert_redirected_to login_path
+    assert_redirected_to root_path
     assert_equal num_users, User.count
   end
   
