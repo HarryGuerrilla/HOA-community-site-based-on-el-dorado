@@ -6,6 +6,8 @@
     <span class="profile-title"><%=h @user %></span>&nbsp;
     <span class="profile-rank"><%=h rank_for(@user) %> &mdash; <%= link_to number_with_delimiter(@user.posts_count) + ' posts', user_posts_path(@user) %></span>
   </div>
+
+	<p><%= h @user.address %></p>
   
   <div class="profile-bio">
     <p><%=h @user.bio %></p>
