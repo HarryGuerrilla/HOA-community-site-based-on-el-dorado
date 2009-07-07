@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
     
   attr_accessible :login, :email, :password, :password_confirmation, :avatar, :signature, :bio, :time_zone, :address
   attr_reader :password
+  is_gravtastic!
   
   has_many :articles, :dependent => :destroy, :order => 'created_at desc'
   has_many :avatars, :dependent => :destroy, :order => 'created_at desc'
