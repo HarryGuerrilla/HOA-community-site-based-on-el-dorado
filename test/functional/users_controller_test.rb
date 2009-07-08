@@ -130,13 +130,14 @@ class UsersControllerTest < ActionController::TestCase
     assert_equal num_users + 1, User.count
   end
   
-  def test_create_redirects_to_login_if_site_private_and_not_logged_in
-    private_site
-    num_users = User.count
-    post :create, :user => {:login => 'skdj', :email => 'test@test.com', :password => 'dfj', :password_confirmation => 'dfj'}
-    assert_redirected_to root_path
-    assert_equal num_users, User.count
-  end
+  # No longer needed. Users can create accounts without being logged in
+  # def test_create_redirects_to_login_if_site_private_and_not_logged_in
+  #   private_site
+  #   num_users = User.count
+  #   post :create, :user => {:login => 'skdj', :email => 'test@test.com', :password => 'dfj', :password_confirmation => 'dfj'}
+  #   assert_redirected_to login_path
+  #   assert_equal num_users, User.count
+  # end
   
   def test_create_works_if_site_private_and_user_is_logged_in
     private_site
