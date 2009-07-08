@@ -2,6 +2,10 @@
 <% form_for @user do |f| -%>
   <div class="box" id="box-users-edit">
     <span class="top">Edit User</span>
+    <p class="label"><label for="user_username">First Name</label></p>
+    <p><%= f.text_field :first_name, :style => "width:31%" %></p>
+    <p class="label"><label for="user_username">Last Name</label></p>
+    <p><%= f.text_field :last_name, :style => "width:31%" %></p>
     <p class="label"><label for="user_username">Username</label></p>
     <p><%= f.text_field :login, :style => "width:31%" %></p>
     <p class="label"><label for="user_email">Email</label></p>
