@@ -88,7 +88,7 @@ class User < ActiveRecord::Base
   end
   
   def name
-    if first_name & last_name
+    if first_name and last_name
       first_name + ' ' + last_name
     else
       login
