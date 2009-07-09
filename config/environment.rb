@@ -16,7 +16,7 @@ Rails::Initializer.run do |config|
   config.gem 'right_http_connection', :version => '1.2.4'
   config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
   config.gem "thoughtbot-shoulda", :lib => "shoulda", :source => "http://gems.github.com"
-  config.gem 'gravtastic', :version => '>= 2.1.0'
+  config.gem 'chrislloyd-gravtastic', :lib => 'gravtastic', :source => "http://gems.github.com", :version => '>= 2.1.2'
     
   # support yaml and heroku config
   CONFIG = (YAML.load_file('config/config.yml')[RAILS_ENV] rescue {}).merge(ENV)
