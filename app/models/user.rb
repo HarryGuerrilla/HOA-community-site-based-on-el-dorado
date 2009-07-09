@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   attr_accessible :login, :email, :password, :password_confirmation, :avatar, :signature, :bio, :time_zone, 
                   :address, :last_name, :first_name
   attr_reader :password
+  attr_accessor :name
   is_gravtastic!
   
   has_many :articles, :dependent => :destroy, :order => 'created_at desc'
@@ -84,6 +85,10 @@ class User < ActiveRecord::Base
     return if value.blank?
     write_attribute :password_hash, User.encrypt(value)
     @password = value
+  end
+  
+  def name
+    first_name + ' ' + last_name
   end
   
   def self.authenticate(login, password)
