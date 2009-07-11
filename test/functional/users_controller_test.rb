@@ -125,7 +125,8 @@ class UsersControllerTest < ActionController::TestCase
 
   def test_create
     num_users = User.count
-    post :create, :user => {:login => 'skdj', :email => 'test@test.com', :password => 'dfj', :password_confirmation => 'dfj'}
+    post :create, :user => {:login => 'skdj', :email => 'test@test.com', :password => 'dfj', :password_confirmation => 'dfj',
+                            :address => 'test', :first_name => 'test', :last_name => 'test'}
     assert_redirected_to root_path
     assert_equal num_users + 1, User.count
   end
@@ -299,8 +300,10 @@ class UsersControllerTest < ActionController::TestCase
   
   def test_that_first_user_created_becomes_admin_and_others_dont
     User.delete_all
-    post :create, :user => {:login => 'user1', :email => 'test1@test.com', :password => 'abc', :password_confirmation => 'abc'}
-    post :create, :user => {:login => 'user2', :email => 'test2@test.com', :password => 'abc', :password_confirmation => 'abc'}
+    post :create, :user => {:login => 'user1', :email => 'test1@test.com', :password => 'abc', :password_confirmation => 'abc',
+                            :address => 'test', :first_name => 'test', :last_name => 'test'}
+    post :create, :user => {:login => 'user2', :email => 'test2@test.com', :password => 'abc', :password_confirmation => 'abc',
+                            :address => 'test', :first_name => 'test', :last_name => 'test'}
     assert_equal User.count, 2
     assert_equal User.find_by_login('user1').admin, true
     assert_equal User.find_by_login('user2').admin, false
