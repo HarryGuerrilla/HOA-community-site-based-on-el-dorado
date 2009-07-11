@@ -19,7 +19,8 @@ class UserTest < ActiveSupport::TestCase
     assert ! u.valid?
     u = User.create(:login => "test", :email => "email", :password => "sdlfkj", :password_confirmation => "sdlfkj")
     assert ! u.valid?
-    u = User.create(:login => "test", :email => "email@address.com", :password => "sdlfkj", :password_confirmation => "sdlfkj")
+    u = User.create(:login => "test", :email => "email@address.com", :password => "sdlfkj", :password_confirmation => "sdlfkj",
+                    :last_name => "test", :first_name => "test", :address => "test")
     assert u.valid?
   end
   
