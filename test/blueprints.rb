@@ -30,6 +30,9 @@ User.blueprint do
   login { Sham.login }
   email { Sham.email }
   password 'test'
+  last_name 'test'
+  first_name 'test'
+  address 'test'
   time_zone 'UTC' # TODO remove when users are moved over to machinist
   online_at { Time.now } # TODO remove when we're doing something better than do_login
 end
