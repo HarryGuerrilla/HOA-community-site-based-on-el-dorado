@@ -143,7 +143,8 @@ class UsersControllerTest < ActionController::TestCase
     private_site
     login_as :trevor
     num_users = User.count
-    post :create, :user => {:login => 'skdj', :email => 'test@test.com', :password => 'dfj', :password_confirmation => 'dfj'}
+    post :create, :user => {:login => 'skdj', :email => 'test@test.com', :password => 'dfj', :password_confirmation => 'dfj',
+                            :address => 'test', :first_name => 'test', :last_name => 'test'}
     assert_redirected_to users_path
     assert_equal num_users + 1, User.count
   end
