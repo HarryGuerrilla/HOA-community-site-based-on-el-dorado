@@ -293,7 +293,8 @@ class UsersControllerTest < ActionController::TestCase
   end
     
   def test_that_default_time_zone_works
-    post :create, :user => {:login => 'timezone', :email => 'test@test.com', :password => 'dfj', :password_confirmation => 'dfj'}
+    post :create, :user => {:login => 'timezone', :email => 'test@test.com', :password => 'dfj', :password_confirmation => 'dfj',
+                            :address => 'test', :last_name => 'test', :first_name => 'test'}
     user = User.find_by_login('timezone')
     assert_equal user.time_zone, 'US/Central'
   end
@@ -310,13 +311,15 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   def test_that_user_gets_default_time_values
-    post :create, :user => {:login => 'user1', :email => 'test1@test.com', :password => 'abc', :password_confirmation => 'abc'}
+    post :create, :user => {:login => 'user1', :email => 'test1@test.com', :password => 'abc', :password_confirmation => 'abc',
+                            :address => 'test', :first_name => 'test', :last_name => 'test'}
     assert_not_nil User.find_by_login('user1').online_at
     assert_not_nil User.find_by_login('user1').all_viewed_at
   end
   
   def test_that_user_gets_default_time_zone_values
-    post :create, :user => {:login => 'user1', :email => 'test1@test.com', :password => 'abc', :password_confirmation => 'abc'}
+    post :create, :user => {:login => 'user1', :email => 'test1@test.com', :password => 'abc', :password_confirmation => 'abc',
+                            :address => 'test', :first_name => 'test', :last_name => 'test'}
     assert_equal User.find_by_login('user1').time_zone, 'US/Central'
   end
   
