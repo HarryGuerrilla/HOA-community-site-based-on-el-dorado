@@ -9,7 +9,7 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2008-11-21 00:00:00 -06:00
+date: 2008-11-20 22:00:00 -08:00
 default_executable: 
 dependencies: 
 - !ruby/object:Gem::Dependency 
@@ -69,11 +69,14 @@ files:
 - test/acf/test_right_acf.rb
 has_rdoc: true
 homepage: 
+licenses: []
+
 post_install_message: 
 rdoc_options: 
 - --main
 - README.txt
 require_paths: 
+- bin
 - bin
 - bin
 - lib
@@ -92,7 +95,7 @@ required_rubygems_version: !ruby/object:Gem::Requirement
 requirements: []
 
 rubyforge_project: rightaws
-rubygems_version: 1.3.1
+rubygems_version: 1.3.3
 signing_key: 
 specification_version: 2
 summary: Interface classes for the Amazon EC2, SQS, and S3 Web Services

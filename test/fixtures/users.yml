@@ -35,6 +35,9 @@ Guest:
   online_at: <%= 5.hours.ago.to_s :db %>
   all_viewed_at: <%= 5.hours.ago.to_s :db %>
   time_zone: 'UTC'
+  address: 'test'
+  last_name: 'test'
+  first_name: 'test'
 Administrator:
   id: 2
   login: Administrator
@@ -50,6 +53,9 @@ Administrator:
   auth_token: 153c53039f6e8e8ca832d1512702f412298ec3a9
   auth_token_exp: <%= (Time.now.utc - 1.week).to_s :db %> # expired
   time_zone: 'UTC'
+  address: 'test'
+  last_name: 'test'
+  first_name: 'test'
 Timothy:
   id: 3
   login: Timothy
@@ -63,6 +69,9 @@ Timothy:
   auth_token: 244cd62e5130681b86c01f8de9e9762d9a3f3645
   auth_token_exp: <%= (Time.now.utc + 1.week).to_s :db %> # not expired
   time_zone: 'UTC'
+  address: 'test'
+  last_name: 'test'
+  first_name: 'test'
 trevor:
   id: 4
   login: trevor
@@ -76,6 +85,9 @@ trevor:
   bio: 'my bio'
   avatar: 4.gif
   time_zone: 'UTC'
+  address: 'test'
+  last_name: 'test'
+  first_name: 'test'
 banned:
   id: 5
   login: banned
@@ -89,6 +101,9 @@ banned:
   time_zone: 'UTC'
   ban_message: 'get banned!'
   banned_until: <%= (Time.now.utc + 5.days).to_s :db %>
+  address: 'test'
+  last_name: 'test'
+  first_name: 'test'
 post_test:
   id: 6
   login: post
@@ -100,6 +115,9 @@ post_test:
   online_at: <%= 2.weeks.ago.to_s :db %>
   all_viewed_at: <%= 5.hours.ago.to_s :db %>
   time_zone: 'UTC'
+  address: 'test'
+  last_name: 'test'
+  first_name: 'test'
 noposts:
   id: 7
   login: noposts
@@ -111,3 +129,6 @@ noposts:
   online_at: <%= 2.weeks.ago.to_s :db %>
   all_viewed_at: <%= 5.hours.ago.to_s :db %>
   time_zone: 'UTC'
+  address: 'test'
+  last_name: 'test'
+  first_name: 'test'
